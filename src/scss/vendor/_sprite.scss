@@ -1,0 +1,28 @@
+.icon {
+  font-size: 10px;
+}
+
+.icon:before {
+  content: " ";
+  vertical-align: middle;
+  display: inline-block;
+  background-image: url("../../../../docs/img/sprites/sprite.svg");
+  background-repeat: no-repeat;
+  background-size: 42.839999999999996em 11.6em;
+}
+
+.no-svg .icon:before {
+  background-image: url("../../../../docs/img/sprites/sprite.png");
+}
+
+.icon.pin:before {
+  background-position: 0em 0em;
+  width: 9.3em;
+  height: 3em;
+}
+
+.icon.wallpaper_logo:before {
+  background-position: 0em -3em;
+  width: 42.839999999999996em;
+  height: 8.535em;
+}
