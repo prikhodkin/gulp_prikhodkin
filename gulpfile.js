@@ -3,7 +3,7 @@ global.$ = {
   gp: require('gulp-load-plugins')(),
   bs: browserSync = require('browser-sync').create(),
   svgSprite: require('gulp-svg-sprites'),
-
+  cleanCss: require('gulp-clean-css'),
   path: {
     tasks: require('./gulp/config')
   }

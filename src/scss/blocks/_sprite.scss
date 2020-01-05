@@ -1,0 +1,29 @@
+.icon {
+    font-size: 10px;
+}
+
+.icon:before {
+    content:' ';
+    vertical-align:middle;
+    display: inline-block;
+    background-image: url("../../../../docs/img/sprites/sprite.svg");
+    background-repeat: no-repeat;
+    background-size: 100em 17em;
+}
+
+.no-svg .icon:before {
+    background-image: url("../../../../docs/img/sprites/sprite.png");
+}
+
+
+
+  .icon.prikhodkin:before {
+      background-position: 0em 0em;
+      width: 100em;
+      height: 16.99208443271768em;
+  }
+
+
+
+
+
