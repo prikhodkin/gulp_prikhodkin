@@ -17,4 +17,5 @@ Gulp v.1.0
     bem create my-block
 
 Если ответ консоли: -bash: $: command not found
+
     export PATH=./node_modules/.bin:$PATH
