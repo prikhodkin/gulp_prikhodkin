@@ -1,2 +1,2 @@
-
+//= "../blocks/menu/menu.js"
 
