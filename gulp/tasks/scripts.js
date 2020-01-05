@@ -1,25 +1,35 @@
-module.exports = function() {
-  $.gulp.task('scripts:lib', ()=> {
-    return $.gulp.src(['node_modules/jquery/dist/jquery.min.js',
-    'node_modules/slick-carousel/slick/slick.min.js'])
-    .pipe($.gp.concat('libs.min.js'))
-    .pipe($.gulp.dest('./docs/js/'))
-    .pipe($.bs.reload({
-      stream: true
-    }))
-  });
+"use strict"
 
-  $.gulp.task('scripts', ()=> {
-    return $.gulp.src('src/js/**/*.js')
-    .pipe($.gp.sourcemaps.init())
-    .pipe($.gp.rigger())
-    .pipe($.gp.babel({presets: ["@babel/preset-env"]}))
-    .pipe($.gp.uglify())
-    .pipe($.gp.rename({suffix: ".min"}))
-    .pipe($.gp.sourcemaps.write("./maps/"))
-    .pipe($.gulp.dest('./docs/js/'))
-    .pipe($.bs.reload({
-      stream: true
-    }))
-  });
-};
+import { paths } from "../../gulpfile.babel";
+import gulp from "gulp";
+import concat from "gulp-concat"
+import sourcemaps  from "gulp-sourcemaps";
+import rigger from "gulp-rigger";
+import babel from "gulp-babel";
+import uglify from "gulp-uglify";
+import rename from "gulp-rename";
+import browserSync from "browser-sync";
+
+gulp.task('scripts:lib', ()=> {
+  return gulp.src(['node_modules/jquery/dist/jquery.min.js',
+  'node_modules/slick-carousel/slick/slick.min.js'])
+  .pipe(concat('libs.min.js'))
+  .pipe(gulp.dest('./docs/js/'))
+  .pipe(browserSync.reload({
+    stream: true
+  }))
+});
+
+gulp.task('scripts', ()=> {
+  return gulp.src(paths.scripts.src)
+  .pipe(sourcemaps.init())
+  .pipe(rigger())
+  .pipe(babel({presets: ["@babel/preset-env"]}))
+  .pipe(uglify())
+  .pipe(rename({suffix: ".min"}))
+  .pipe(sourcemaps.write("./maps/"))
+  .pipe(gulp.dest('./docs/js/'))
+  .pipe(browserSync.reload({
+    stream: true
+  }))
+});

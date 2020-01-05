@@ -1,10 +1,13 @@
-module.exports = function() {
-  $.gulp.task('watch', ()=> {
-    $.gulp.watch(['src/scss/**/*.scss','src/blocks/**/*.scss'],$.gulp.series('sass'));
-    $.gulp.watch('src/**/*.html',$.gulp.series('html'));
-    $.gulp.watch(['src/js/**/*.js','src/blocks/**/*.js'],$.gulp.series('scripts'));
-    $.gulp.watch('src/img/**/*',$.gulp.series('images'));
-    $.gulp.watch('src/fonts/**/*',$.gulp.series('fonts'));
-    $.gulp.watch('src/img/icons/svg/*',$.gulp.series('sprite'));
-  });
-};
+"use strict"
+
+import { paths } from "../../gulpfile.babel";
+import gulp from "gulp";
+
+gulp.task('watch', ()=> {
+  gulp.watch(paths.sass.watch,gulp.series('sass'));
+  gulp.watch(paths.html.watch,gulp.series('html'));
+  gulp.watch(paths.scripts.watch,gulp.series('scripts'));
+  gulp.watch(paths.images.watch,gulp.series('images'));
+  gulp.watch(paths.fonts.watch,gulp.series('fonts'));
+  gulp.watch(paths.sprite.watch,gulp.series('sprite'));
+});

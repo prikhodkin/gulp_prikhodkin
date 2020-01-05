@@ -1,0 +1,9 @@
+@mixin list-reset {
+  list-style: none;
+  padding-left: 0;
+}
+
+@mixin page-wrapper {
+  padding-left: calc(50% - 585px);
+  padding-right: calc(50% - 585px);
+}
