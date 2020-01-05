@@ -9,3 +9,11 @@ Gulp v.1.0.
 Запуск
 -----------------------------------
     gulp
+
+Смена пути для bem-create-tools
+-----------------------------------
+    export PATH=./node_modules/.bin:$PATH
+
+Создание БЭМ блока
+-----------------------------------
+    bem create test.{js,scss,html} -l src/blocks
