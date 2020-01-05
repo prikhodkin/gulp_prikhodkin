@@ -3,7 +3,8 @@ module.exports = function() {
     return $.gulp.src('src/scss/main.scss')
       .pipe($.gp.sourcemaps.init())
       .pipe($.gp.sass({
-        'include css': true
+        includeCss: true,
+        includePaths: require('node-normalize-scss').includePaths
       }))
       .pipe($.gp.autoprefixer({
         cascade: false
