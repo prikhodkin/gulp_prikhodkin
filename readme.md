@@ -1,19 +1,20 @@
-Gulp v.1.0.
+Gulp v.1.0
 =====================
 
 Установка
 -----------------------------------
-    npm i
 
+    npm i
 
 Запуск
 -----------------------------------
-    gulp
 
-Смена пути для bem-create-tools
------------------------------------
-    export PATH=./node_modules/.bin:$PATH
+    gulp
 
 Создание БЭМ блока
 -----------------------------------
-    bem create test.{js,scss,html} -l src/blocks
+
+    bem create my-block
+
+Если ответ консоли: -bash: $: command not found
+    export PATH=./node_modules/.bin:$PATH
