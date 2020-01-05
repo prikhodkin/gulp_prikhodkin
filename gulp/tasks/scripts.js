@@ -12,6 +12,7 @@ module.exports = function() {
   $.gulp.task('scripts', ()=> {
     return $.gulp.src('src/js/**/*.js')
     .pipe($.gp.sourcemaps.init())
+    .pipe($.gp.rigger())
     .pipe($.gp.babel({presets: ["@babel/preset-env"]}))
     .pipe($.gp.uglify())
     .pipe($.gp.rename({suffix: ".min"}))
