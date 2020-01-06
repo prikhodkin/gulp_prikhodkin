@@ -36,6 +36,11 @@ const requireDir = require("require-dir"),
           dest: "./docs/js/",
           watch: ['src/js/**/*.js','src/blocks/**/*.js']
         },
+        scriptsLib: {
+          src: ['node_modules/jquery/dist/jquery.min.js',
+          'node_modules/slick-carousel/slick/slick.min.js'],
+          dest: "./docs/js/"
+        },
         sprite: {
           src: "./src/img/icons/svg/*.svg",
           dest: "./docs/img/sprites/",

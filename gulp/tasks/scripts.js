@@ -11,10 +11,9 @@ import rename from "gulp-rename";
 import browserSync from "browser-sync";
 
 gulp.task('scripts:lib', ()=> {
-  return gulp.src(['node_modules/jquery/dist/jquery.min.js',
-  'node_modules/slick-carousel/slick/slick.min.js'])
+  return gulp.src(paths.scriptsLib.src)
   .pipe(concat('libs.min.js'))
-  .pipe(gulp.dest('./docs/js/'))
+  .pipe(gulp.dest(paths.scriptsLib.dest))
   .pipe(browserSync.reload({
     stream: true
   }))
