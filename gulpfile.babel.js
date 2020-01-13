@@ -22,7 +22,7 @@ const requireDir = require("require-dir"),
           watch: "src/fonts/**/*"
         },
         images: {
-          src: ["./src/img/**/*.{jpg,jpeg,png,gif}", "!./src/img/svg/icons/*", "!./src/img/favicons/*.{jpg,jpeg,png,gif,svg}"],
+          src: ["./src/img/**/*.{jpg,jpeg,png,gif,svg}", "!./src/img/svg/icons/*", "!./src/img/favicons/*.{jpg,jpeg,png,gif,svg}"],
           dest: "./docs/img/",
           watch: "src/img/**/*"
         },

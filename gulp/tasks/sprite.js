@@ -2,6 +2,7 @@
 
 import { paths } from "../../gulpfile.babel";
 import gulp from "gulp";
+import svg from "gulp-svg-sprite";
 import cheerio from "gulp-cheerio"
 import svgSprite from "gulp-svg-sprites"
 import replace from "gulp-replace";
@@ -18,13 +19,16 @@ gulp.task("sprite", function() {
             },
             parserOptions: { xmlMode: true }
         }))
-        .pipe(svgSprite({
-    preview: false,
-            cssFile: paths.sprite.style,
-    svg: {
-      sprite: paths.sprite.svg
-    }
-        }))
+        .pipe(svg({
+          shape: {
+              dest: "intermediate-svg"
+          },
+          mode: {
+              stack: {
+                  sprite: "../sprite.svg"
+              }
+          }
+      }))
         .pipe(gulp.dest(paths.sprite.dest))
         .pipe(browserSync.reload({
             stream: true

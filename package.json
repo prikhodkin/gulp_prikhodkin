@@ -31,6 +31,7 @@
     "gulp-rigger": "^0.5.8",
     "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.5",
+    "gulp-svg-sprite": "^1.5.0",
     "gulp-svg-sprites": "^4.1.2",
     "gulp-uglify": "^3.0.2",
     "jquery": "^3.4.1",
