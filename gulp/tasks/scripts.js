@@ -7,11 +7,13 @@ import sourcemaps  from "gulp-sourcemaps";
 import rigger from "gulp-rigger";
 import babel from "gulp-babel";
 import uglify from "gulp-uglify";
+import plumber from "gulp-plumber";
 import rename from "gulp-rename";
 import browserSync from "browser-sync";
 
 gulp.task('scripts:lib', ()=> {
   return gulp.src(paths.scriptsLib.src)
+  .pipe(plumber())
   .pipe(concat('libs.min.js'))
   .pipe(gulp.dest(paths.scriptsLib.dest))
   .pipe(browserSync.reload({

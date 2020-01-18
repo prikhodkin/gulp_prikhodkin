@@ -2,10 +2,12 @@
 
 import { paths } from "../../gulpfile.babel";
 import gulp from "gulp";
+import plumber from "gulp-plumber";
 import favicons from "gulp-favicons";
 
 gulp.task("favicons", ()=> {
     return gulp.src(paths.favicons.src)
+        .pipe(plumber())
         .pipe(favicons({
             icons: {
                 appleIcon: true,
