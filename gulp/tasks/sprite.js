@@ -4,12 +4,14 @@ import { paths } from "../../gulpfile.babel";
 import gulp from "gulp";
 import svg from "gulp-svg-sprite";
 import cheerio from "gulp-cheerio"
+import plumber from "gulp-plumber";
 import svgSprite from "gulp-svg-sprites"
 import replace from "gulp-replace";
 import browserSync from "browser-sync";
 
 gulp.task("sprite", function() {
     return gulp.src(paths.sprite.src)
+        .pipe(plumber())
         .pipe(replace("&gt;", ">"))
         .pipe(cheerio({
             run: function ($) {

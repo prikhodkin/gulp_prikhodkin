@@ -47,6 +47,11 @@ const requireDir = require("require-dir"),
           style: "../../../src/scss/blocks/_sprite.scss",
           svg: "../../../docs/img/sprites/sprite.svg",
           watch: "src/img/icons/svg/*"
+        },
+        webp: {
+          src: ["./src/img/**/*.{jpg,jpeg,png,gif}", "!./src/img/svg/icons/*", "!./src/img/favicons/*.{jpg,jpeg,png,gif,svg}"],
+          dest: "./docs/img/",
+          watch: "src/img/**/*" 
         }
 
     };
@@ -56,7 +61,7 @@ requireDir("./gulp/tasks/");
 export { paths };
 
 gulp.task('default', gulp.series('clean','sprite',
-  gulp.parallel('sass','html','scripts:lib','scripts','images','favicons','fonts'),
+  gulp.parallel('sass','html','scripts:lib','scripts','images','favicons','fonts', 'webp'),
   gulp.parallel('watch','serve')
 ));
 
