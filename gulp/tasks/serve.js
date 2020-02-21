@@ -5,7 +5,9 @@ import browserSync from "browser-sync";
 gulp.task('serve', ()=> {
   browserSync.init({
     server: {
-      baseDir: './docs'
+      baseDir: './docs',
+      tunnel: true,
+      port: 9000
     }
   });
 });

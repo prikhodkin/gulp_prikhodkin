@@ -1,0 +1,10 @@
+.test {
+  @include vh-check();
+  content: "";
+  display: block;
+  width: 100%;
+  background-color: antiquewhite;
+  p {
+    margin: 0;
+  }
+}

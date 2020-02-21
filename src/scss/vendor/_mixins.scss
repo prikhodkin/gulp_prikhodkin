@@ -7,3 +7,10 @@
   padding-left: calc(50% - 585px);
   padding-right: calc(50% - 585px);
 }
+
+@mixin vh-check {
+  height: 100vh;
+  /* If you need to support browser without CSS var support (<= IE11) */
+  height: calc(100vh - var(--vh-offset, 0px));
+  /* enable vh fix */
+}

@@ -43,7 +43,8 @@
     "stylelint": "^12.0.1",
     "stylelint-config-htmlacademy": "^0.1.4",
     "stylelint-order": "^4.0.0",
-    "stylelint-selector-bem-pattern": "^2.1.0"
+    "stylelint-selector-bem-pattern": "^2.1.0",
+    "vh-check": "^2.0.5"
   },
   "scripts": {
     "dev": "gulp"
