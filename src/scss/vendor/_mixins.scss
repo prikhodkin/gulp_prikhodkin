@@ -1,16 +1,96 @@
+//Сброс стилей для списков
 @mixin list-reset {
   list-style: none;
   padding-left: 0;
 }
 
+// Контейнер 1200 px
 @mixin page-wrapper {
   padding-left: calc(50% - 585px);
   padding-right: calc(50% - 585px);
 }
 
+
+// 100 высота экрана с вычетом адресной строки.
+// https://github.com/Hiswe/vh-check
 @mixin vh-check {
   height: 100vh;
-  /* If you need to support browser without CSS var support (<= IE11) */
+  /* If you need to support browser without CSS var support (<= IE11) *//**/
   height: calc(100vh - var(--vh-offset, 0px));
   /* enable vh fix */
+}
+
+
+// Отзывчивый текст 
+// @include fluidFontSize(16px, 24px, 480px, 1280px, 18px); - Подключение к селектору
+// https://habr.com/ru/post/310186/
+@function strip-unit($number) {
+  @if type-of($number) == "number" and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+
+  @return $number;
+}
+
+@function calcFluidFontSize($f-min, $f-max, $w-min, $w-max, $units: px) {
+  $f-min: strip-unit($f-min);
+  $f-max: strip-unit($f-max);
+  $w-min: strip-unit($w-min);
+  $w-max: strip-unit($w-max);
+
+  $k: ($f-max - $f-min)/($w-max - $w-min);
+  $b: $f-min - $k * $w-min;
+
+  $b: $b + $units;
+
+  @return calc( #{$k} * 100vw + #{$b} );
+}
+
+@mixin fluidFontSize($f-min, $f-max, $w-min, $w-max, $fallback: false) {
+  
+  font-size: $f-min;
+  
+  @media (min-width: $w-min) {
+    @if ($fallback) {
+      font-size: $fallback;
+    }
+    font-size: calcFluidFontSize($f-min, $f-max, $w-min, $w-max, px);
+  }
+  
+  @media (min-width: $w-max) {
+    font-size: $f-max;
+  }
+}
+
+//Обрезка текста по вертикальным границам 
+// @include text-crop();
+//http://text-crop.eightshapes.com/
+@mixin text-crop($line-height: 1.3, $top-adjustment: 0, $bottom-adjustment: 0) {
+  // Configured in Step 1
+  $top-crop: 9;
+  $bottom-crop: 9;
+  $crop-font-size: 36;
+  $crop-line-height: 1.2;
+
+  // Apply values to calculate em-based margins that work with any font size
+  $dynamic-top-crop: max(($top-crop + ($line-height - $crop-line-height) * ($crop-font-size / 2)), 0) / $crop-font-size;
+  $dynamic-bottom-crop: max(($bottom-crop + ($line-height - $crop-line-height) * ($crop-font-size / 2)), 0) / $crop-font-size;
+
+  // Mixin output
+  line-height: $line-height;
+
+  &::before, &::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+  }
+
+  &::before {
+    margin-bottom: calc(-#{$dynamic-top-crop}em + #{$top-adjustment});
+  }
+
+  &::after {
+    margin-top: calc(-#{$dynamic-bottom-crop}em + #{$bottom-adjustment});
+  }
 }

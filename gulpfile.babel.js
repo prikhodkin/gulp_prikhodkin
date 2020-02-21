@@ -1,6 +1,7 @@
 "use strict"
 
 import gulp from "gulp";
+import rev from "gulp-rev";
 
 const requireDir = require("require-dir"),
     paths = {
@@ -32,15 +33,16 @@ const requireDir = require("require-dir"),
           watch: ['src/scss/**/*.scss','src/blocks/**/*.scss']
         },
         scripts: {
-          src: "src/js/**/*.js",
+          src: "src/js/general.js",
           dest: "./docs/js/",
           watch: ['src/js/**/*.js','src/blocks/**/*.js']
         },
         scriptsLib: {
           src: [
-            'node_modules/vh-check/dist/vh-check.js',
-            'node_modules/jquery/dist/jquery.min.js',
-            'node_modules/slick-carousel/slick/slick.min.js'],
+            './node_modules/stimulus/dist/stimulus.umd.js',
+            './node_modules/vh-check/dist/vh-check.js',
+            './node_modules/jquery/dist/jquery.min.js',
+            './node_modules/slick-carousel/slick/slick.min.js'],
           dest: "./docs/js/"
         },
         sprite: {
@@ -62,8 +64,16 @@ requireDir("./gulp/tasks/");
 
 export { paths };
 
-gulp.task('default', gulp.series('clean','sprite',
+gulp.task('dev',
+  gulp.series('clean','sprite',
   gulp.parallel('sass','html','scripts:lib','scripts','images','favicons','fonts', 'webp'),
   gulp.parallel('watch','serve')
 ));
+
+gulp.task('prod', 
+  gulp.series('clean','sprite', 
+    gulp.parallel('sass:min','html','scripts:min','scripts-lib:min','images:min','favicons','fonts', 'webp'),
+    gulp.series('hash')
+  ));
+
 
