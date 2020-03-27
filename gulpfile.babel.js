@@ -1,7 +1,7 @@
 "use strict"
 
 import gulp from "gulp";
-import rev from "gulp-rev";
+
 
 const requireDir = require("require-dir"),
     paths = {
@@ -42,6 +42,7 @@ const requireDir = require("require-dir"),
             './node_modules/stimulus/dist/stimulus.umd.js',
             './node_modules/vh-check/dist/vh-check.js',
             './node_modules/jquery/dist/jquery.min.js',
+            './node_modules/wow.js/dist/wow.js',
             './node_modules/slick-carousel/slick/slick.min.js'],
           dest: "./docs/js/"
         },
@@ -70,7 +71,7 @@ gulp.task('dev',
   gulp.parallel('watch','serve')
 ));
 
-gulp.task('prod', 
+gulp.task('build',
   gulp.series('clean','sprite', 
     gulp.parallel('sass:min','html','scripts:min','scripts-lib:min','images:min','favicons','fonts', 'webp'),
     gulp.series('hash')

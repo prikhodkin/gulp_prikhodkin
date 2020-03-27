@@ -10,7 +10,7 @@ import uglify from "gulp-uglify";
 import plumber from "gulp-plumber";
 import rename from "gulp-rename";
 import browserSync from "browser-sync";
-import rev from "gulp-rev";
+
 
 gulp.task('scripts:lib', ()=> {
   return gulp.src(paths.scriptsLib.src)
@@ -21,6 +21,15 @@ gulp.task('scripts:lib', ()=> {
       stream: true
   }))
 });
+
+// gulp.task('scripts', ()=> {
+//   return gulp.src(paths.scripts.src)
+//     .pipe(webpackStream(webpackConfig), webpack)
+//     .pipe(gulp.dest('./docs/js/'))
+//     .pipe(browserSync.reload({
+//       stream: true
+//     }))
+// });
 
 gulp.task('scripts', ()=> {
   return gulp.src(paths.scripts.src)
