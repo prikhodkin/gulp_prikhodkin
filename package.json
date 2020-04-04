@@ -60,7 +60,7 @@
     "wow.js": "^1.2.2"
   },
   "scripts": {
-    "dev": "gulp",
+    "dev": "gulp dev",
     "build": "gulp build"
   },
   "keywords": [],
