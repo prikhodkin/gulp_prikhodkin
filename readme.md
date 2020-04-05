@@ -66,10 +66,13 @@ npm run deploy
 ### <a name="help"></a> Заметки
 #### <a name="bem"></a> Создание БЭМ блока   
 В папке ``` blocks``` создается папка ```my-block ```. 
-<br>Структура `my-block `:
-    + `my-block.js`
-    + `my-block.scss`
-    + `my-block.html`
+<br>Структура:
+```
+my-block
+├── my-block.html
+├── my-block.scss
+└── my-block.js
+```
 
 ```
 bem create my-block
