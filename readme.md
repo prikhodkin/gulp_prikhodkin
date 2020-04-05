@@ -43,20 +43,23 @@ gulp_prikhodkin
 ### <a name="command"></a> Команды запуска
 
 + Режим разработки 
-
-
+```
     npm run dev
+```
     
 + Режим продакш. Минифицирует css/ js/ img, так создает json manifest для css и js. Результат сборки папка ```dist ```
     
-
+```
     npm run build
+```
     
 
 + Публикация на [GitHub Pages](https://pages.github.com/)
 
-
+```
     npm run deploy
+```
+
     
 + Создание БЭМ Блока
 В папке ``` blocks``` создается папка ```my-block ```. 
@@ -65,9 +68,9 @@ gulp_prikhodkin
     + `my-block.scss`
     + `my-block.html`
 
-    
+```
     bem create my-block
-    
+```    
     
 ### <a name="help"></a> Шпаргалки
 
@@ -84,5 +87,7 @@ gulp_prikhodkin
 
 + При создании БЭМ блока ответ консоли: `-bash: $: command not found`
 
-
+```
     export PATH=./node_modules/.bin:$PATH
+```
+
