@@ -4,7 +4,9 @@
  + [Быстрый старт](#setup)
  + [Структура проекта](#file)
  + [Команды запуска](#command)
- + [Шпаргалки](#help)
+ + [Заметки](#help)
+    + [Создание БЭМ блока](#bem)
+    + [Использование svg спрайта](#svg)
  + [Ошибки](#error)
 
 ### <a name="setup"></a> Быстрый старт
@@ -42,37 +44,41 @@ gulp_prikhodkin
 
 ### <a name="command"></a> Команды запуска
 
-+ Режим разработки 
+#### Режим разработки 
 ```
 npm run dev
 ```
     
-+ Режим продакш. Минифицирует css/ js/ img, так создает json manifest для css и js. Результат сборки папка ```dist ```
+#### Режим продакш. 
+Минифицирует css/ js/ img, так создает json manifest для css и js. Результат сборки папка ```dist ```
     
 ```
 npm run build
 ```
     
 
-+ Публикация на [GitHub Pages](https://pages.github.com/)
+#### Публикация на [GitHub Pages](https://pages.github.com/)
 
 ```
 npm run deploy
 ```
 
-### <a name="help"></a> Шпаргалки
-+ Создание БЭМ блока   
+### <a name="help"></a> Заметки
+#### <a name="bem"></a> Создание БЭМ блока   
 В папке ``` blocks``` создается папка ```my-block ```. 
-<br>Содержание `my-block `:
-    + `my-block.js`
-    + `my-block.scss`
-    + `my-block.html`
+<br>Структура:
+```
+my-block
+├── my-block.html
+├── my-block.scss
+└── my-block.js
+```
 
 ```
 bem create my-block
 ```    
     
-+ Использование svg спрайта
+#### <a name="svg"></a> Использование svg спрайта
 ``` 
 <svg class="svg">
  <use xlink:href="img/sprites/sprite.svg#icon"></use>
