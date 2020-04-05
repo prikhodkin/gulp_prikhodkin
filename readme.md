@@ -44,26 +44,27 @@ gulp_prikhodkin
 
 ### <a name="command"></a> Команды запуска
 
-+ Режим разработки 
+#### Режим разработки 
 ```
 npm run dev
 ```
     
-+ Режим продакш. Минифицирует css/ js/ img, так создает json manifest для css и js. Результат сборки папка ```dist ```
+#### Режим продакш. 
+Минифицирует css/ js/ img, так создает json manifest для css и js. Результат сборки папка ```dist ```
     
 ```
 npm run build
 ```
     
 
-+ Публикация на [GitHub Pages](https://pages.github.com/)
+#### Публикация на [GitHub Pages](https://pages.github.com/)
 
 ```
 npm run deploy
 ```
 
 ### <a name="help"></a> Заметки
-+ <a name="bem"></a> Создание БЭМ блока   
+#### <a name="bem"></a> Создание БЭМ блока   
 В папке ``` blocks``` создается папка ```my-block ```. 
 <br>Структура `my-block `:
     + `my-block.js`
@@ -74,7 +75,7 @@ npm run deploy
 bem create my-block
 ```    
     
-+ <a name="svg"></a> Использование svg спрайта
+#### <a name="svg"></a> Использование svg спрайта
 ``` 
 <svg class="svg">
  <use xlink:href="img/sprites/sprite.svg#icon"></use>
