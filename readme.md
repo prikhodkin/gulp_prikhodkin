@@ -60,8 +60,8 @@ npm run build
 npm run deploy
 ```
 
-    
-+ Создание БЭМ Блока
+### <a name="help"></a> Шпаргалки
++ Создание БЭМ блока   
 В папке ``` blocks``` создается папка ```my-block ```. 
 <br>Содержание `my-block `:
     + `my-block.js`
@@ -72,8 +72,6 @@ npm run deploy
 bem create my-block
 ```    
     
-### <a name="help"></a> Шпаргалки
-
 + Использование svg спрайта
 ``` 
 <svg class="svg">
