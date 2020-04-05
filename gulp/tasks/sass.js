@@ -25,11 +25,11 @@ gulp.task('sass', ()=> {
       cascade: false
     }))
     .pipe(replace('../../','../'))
-   
+
     .pipe(cleanCss())
- 
+
     .pipe(sourcemaps.write())
-    .pipe(gulp.dest('docs/css/'))
+    .pipe(gulp.dest('dist/css/'))
     .pipe(browserSync.reload({
       stream: true
     }))
