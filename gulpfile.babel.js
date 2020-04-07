@@ -73,14 +73,14 @@ export { paths };
 
 gulp.task('dev',
   gulp.series('clean','sprite',
-  gulp.parallel('sass','html','scripts:lib','scripts','images','favicons','fonts', 'webp'),
+  gulp.parallel('sass','html','scripts','images','favicons','fonts', 'webp'),
   gulp.parallel('watch','serve')
 ));
 
 gulp.task('build',
   gulp.series('clean','sprite',
-    gulp.parallel('sass:min','html','scripts:min','scripts-lib:min','images:min','favicons','fonts', 'webp'),
+    gulp.parallel('sass','html','scripts','images:min','favicons','fonts', 'webp'),
     gulp.series('hash')
-  ));
+));
 
 
