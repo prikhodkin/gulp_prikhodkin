@@ -12,74 +12,43 @@ import rename from "gulp-rename";
 import browserSync from "browser-sync";
 
 
-
-
-import webpack from "webpack";
-import webpackStream from "webpack-stream";
-
-const webpackConfig = require("../../webpack.config.js");
-
-
-gulp.task("scripts", () => {
-  return gulp.src(paths.scripts.src)
+gulp.task('scripts:lib', ()=> {
+  return gulp.src(paths.scriptsLib.src)
     .pipe(plumber())
-    .pipe(webpackStream(webpackConfig), webpack)
-    .pipe(rename({suffix: ".min"}))
-    .pipe(gulp.dest(paths.scripts.dest))
+    .pipe(concat('libs.js'))
+    .pipe(gulp.dest(paths.scriptsLib.dest))
     .pipe(browserSync.reload({
       stream: true
     }))
 });
 
+gulp.task('scripts', ()=> {
+  return gulp.src(paths.scripts.src)
+    .pipe(sourcemaps.init())
+    .pipe(rigger())
+    .pipe(babel({presets: ["@babel/preset-env"]}))
+    .pipe(sourcemaps.write("./maps/"))
+    .pipe(gulp.dest('./dist/js/'))
+    .pipe(browserSync.reload({
+      stream: true
+    }))
+});
 
+gulp.task('scripts-lib:min', ()=> {
+  return gulp.src(paths.scriptsLib.src)
+    .pipe(plumber())
+    .pipe(concat('libs.js'))
+    .pipe(uglify())
+    .pipe(rename({suffix: ".min"}))
+    .pipe(gulp.dest('./src/js/'))
 
+});
 
-// gulp.task('scripts:lib', ()=> {
-//   return gulp.src(paths.scriptsLib.src)
-//   .pipe(plumber())
-//     .pipe(concat('libs.js'))
-//     .pipe(gulp.dest(paths.scriptsLib.dest))
-//     .pipe(browserSync.reload({
-//       stream: true
-//   }))
-// });
-
-// gulp.task('scripts', ()=> {
-//   return gulp.src(paths.scripts.src)
-//     .pipe(webpackStream(webpackConfig), webpack)
-//     .pipe(gulp.dest('./docs/js/'))
-//     .pipe(browserSync.reload({
-//       stream: true
-//     }))
-// });
-
-// gulp.task('scripts', ()=> {
-//   return gulp.src(paths.scripts.src)
-//     .pipe(sourcemaps.init())
-//     .pipe(rigger())
-//     .pipe(babel({presets: ["@babel/preset-env"]}))
-//     .pipe(sourcemaps.write("./maps/"))
-//     .pipe(gulp.dest('./dist/js/'))
-//     .pipe(browserSync.reload({
-//       stream: true
-//   }))
-// });
-
-// gulp.task('scripts-lib:min', ()=> {
-//   return gulp.src(paths.scriptsLib.src)
-//     .pipe(plumber())
-//     .pipe(concat('libs.js'))
-//     .pipe(uglify())
-//     .pipe(rename({suffix: ".min"}))
-//     .pipe(gulp.dest('./src/js/'))
-//
-// });
-//
-// gulp.task('scripts:min', () => {
-//   return gulp.src(paths.scripts.src)
-//     .pipe(rigger())
-//     .pipe(babel({presets: ["@babel/preset-env"]}))
-//     .pipe(uglify())
-//     .pipe(rename({suffix: ".min"}))
-//     .pipe(gulp.dest('./src/js/'))
-// });
+gulp.task('scripts:min', () => {
+  return gulp.src(paths.scripts.src)
+    .pipe(rigger())
+    .pipe(babel({presets: ["@babel/preset-env"]}))
+    .pipe(uglify())
+    .pipe(rename({suffix: ".min"}))
+    .pipe(gulp.dest('./src/js/'))
+});
