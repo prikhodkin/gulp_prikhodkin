@@ -42,7 +42,7 @@
     "gulp-uglify": "^3.0.2",
     "gulp-webp": "^4.0.1",
     "imagemin-webp": "^5.1.0",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "node-normalize-scss": "^8.0.1",
     "require-dir": "^1.2.0",
     "slick-carousel": "^1.8.1",
