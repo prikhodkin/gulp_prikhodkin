@@ -1,7 +1,7 @@
-@import "./vendor/fonts";
+@import "helpers/fonts";
 @import "normalize";
-@import "./vendor/sprite";
-@import "./vendor/libs";
-@import "./vendor/variables";
-@import "./vendor/mixins";
+@import "helpers/libs";
+@import "helpers/variables";
+@import "helpers/mixins";
+@import "helpers/global";
 @import "../blocks/blocks.scss";

@@ -47,5 +47,5 @@ gulp.task('sass:min', () => {
     .pipe(csso())
     .pipe(cleanCss())
     .pipe(rename({suffix: ".min"}))
-    .pipe(gulp.dest('src/css/'))
+    .pipe(gulp.dest('dist/css/'))
 })

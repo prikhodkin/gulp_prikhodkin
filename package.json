@@ -3,7 +3,14 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "dependencies": {},
+  "dependencies": {
+    "hc-sticky": "^2.2.3",
+    "jquery": "^3.5.0",
+    "node-normalize-scss": "^8.0.1",
+    "slick-carousel": "^1.8.1",
+    "vh-check": "^2.0.5",
+    "wow.js": "^1.2.2"
+  },
   "devDependencies": {
     "@babel/core": "^7.7.7",
     "@babel/plugin-proposal-class-properties": "^7.8.3",
@@ -42,10 +49,7 @@
     "gulp-uglify": "^3.0.2",
     "gulp-webp": "^4.0.1",
     "imagemin-webp": "^5.1.0",
-    "jquery": "^3.5.0",
-    "node-normalize-scss": "^8.0.1",
     "require-dir": "^1.2.0",
-    "slick-carousel": "^1.8.1",
     "stimulus": "^1.1.1",
     "stylelint": "^12.0.1",
     "stylelint-config-htmlacademy": "^0.1.4",
@@ -55,10 +59,8 @@
     "stylelint-scss": "^3.14.2",
     "stylelint-selector-bem-pattern": "^2.1.0",
     "turbolinks": "^5.2.0",
-    "vh-check": "^2.0.5",
     "webpack": "^4.42.0",
-    "webpack-stream": "^5.2.1",
-    "wow.js": "^1.2.2"
+    "webpack-stream": "^5.2.1"
   },
   "scripts": {
     "dev": "gulp dev",
