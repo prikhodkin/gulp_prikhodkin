@@ -4,6 +4,7 @@
  + [Быстрый старт](#setup)
  + [Структура проекта](#file)
  + [Команды запуска](#command)
+ + [Библиотеки](#libs)
  + [Заметки](#help)
     + [Создание БЭМ блока](#bem)
     + [Использование svg спрайта](#svg)
@@ -20,26 +21,39 @@
 
 ### <a name="file"></a> Структура проекта
 ```
-gulp_prikhodkin
-├── dist
-├── gulp
-├── src
-│   ├── blocks
-│   ├── css
-│   ├── fonts
-│   ├── img
-│   ├── js
-│   ├── scss
-│   └── view
-├── gulpfile.babel.js
-├── package.json
-├── .babelrc.js
-├── .bemrc.js
-├── .eslintrc.json
-├── .stylelintrc
-├── .stylelintignore
-├── .gitignore
-└── .editorconfig
+gulp_prikhodkin                         | Корень проекта
+├── dist                                | Build проекта
+├── gulp                                | Таски для галпа
+├── src                                 | Исходные файлы
+│   ├── blocks                          | БЭМ блоки
+│   │   └── block                       | БЭМ Блок
+│   │       ├── block.html              | Разметка блока
+│   │       ├── block.js                | Скрипт блока
+│   │       └── block.scss              | Стили блока
+│   ├── fonts                           | Шрифты
+│   ├── img                             | Изображения
+│   │   └── favicons                    | Фавиконки
+│   ├── js                              | JS файлы
+│   ├── scss                            | Файлы стилей
+│   │   ├── helpers                     | Помощники
+│   │   │   ├── _global.scss            | Глобальные стили сайта
+│   │   │   ├── _mixins.scss            | Примеси
+│   │   │   ├── _libs.scss              | Стили от библиотек
+│   │   │   └── _variables.scss         | Переменные
+│   │   └── main.scss                   | Основной файл стилей, экспортирует все остальные стиливые файлы
+│   └── view                            | Представления
+├── gulpfile.babel.js                   | Конфигурация Gulp
+├── libs.js                             | Коллекция JS библиотек
+├── package.json                        | Список зависимостей 
+├── .babelrc.js                         | Конфикурация babel
+├── .bemrc.js                           | Конфигурация bem create
+├── .eslintrc.json                      | Конфигурация ES-Lint
+├── .eslintrcignore                     | Исключенные файлы из проверки ES-Lint
+├── .eslintrc.yml                       | Конфигурация ES-Lint
+├── .stylelintrc                        | Концигурация StyleLint
+├── .stylelintignore                    | Исключенные файлы из проверки StyleLint
+├── .gitignore                          | Исключенные файлы из git
+└── .editorconfig                       | Конфигурация редактора
 ```
 
 ### <a name="command"></a> Команды запуска
@@ -63,6 +77,33 @@ npm run build
 npm run deploy
 ```
 
+### <a name="libs"></a> Библиотеки
+
+В корне проекта файл libs.js содержит все подключенные библиотеки и хранит в себе накопленную коллекцию библиотек. Неиспользуемые в проекте библиотеки закомментированны. 
+
+Для добавление новой библиотеки, необходимо установить пакет с помощью команды
+
+```
+npm install pack-name --save
+```
+
+После установки пакета, необходимо прописать путь до библиотеки в файле libs.js
+
+```
+./node_modules/jquery/dist/jquery.min.js
+```
+
+Библиотека успешно добавлена в проект.
+
+## Коллекция библиотек
+
++ [jQuery](https://jquery-docs.ru/) - Библиотека jQuery;
++ [Stimulus](https://stimulusjs.org/) - Фреймворк Stimulus;
++ [vh-check](https://github.com/Hiswe/vh-check) - Утилита для высоты экрана на мобильных устройствах;
++ [WOW](https://wowjs.uk/) - Анимация появления элементов при скролле;
++ [Slick](http://kenwheeler.github.io/slick/) - Слайдер;
++ [hc-sticky](http://kenwheeler.github.io/slick/) - Библиотека для создания "липких" элементов;
+
 ### <a name="help"></a> Заметки
 #### <a name="bem"></a> Создание БЭМ блока   
 В папке ``` blocks``` создается папка ```my-block ```. 
@@ -85,6 +126,11 @@ bem create my-block
 </svg> 
 ```  
    
+#### <a name="include"></a> Подключение файлов
+Используется для подключения html/js файлов в нужном месте
+```
+//= "../blocks/dir-name/file-name.html"
+```
        
 
 ### <a name="error"></a> Ошибки
