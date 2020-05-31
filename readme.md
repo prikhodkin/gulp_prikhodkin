@@ -33,6 +33,8 @@ gulp_prikhodkin                         | Корень проекта
 │   │       └── block.scss              | Стили блока
 │   ├── fonts                           | Шрифты
 │   ├── img                             | Изображения
+│   │   ├── icons                       | Иконки   
+│   │   │   └── svg                     | SVG файлы для спрайта           
 │   │   └── favicons                    | Фавиконки
 │   ├── js                              | JS файлы
 │   ├── scss                            | Файлы стилей
@@ -121,6 +123,14 @@ bem create my-block
 ```    
     
 #### <a name="svg"></a> Использование svg спрайта
+Папка в которой хранятся svg иконки
+```
+img                             | Изображения
+└── icons                       | Иконки   
+    └── svg                     | SVG файлы для спрайта
+```
+
+Вызов спрайта
 ``` 
 <svg class="svg">
  <use xlink:href="img/sprites/sprite.svg#icon"></use>
