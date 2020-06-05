@@ -2,7 +2,7 @@ import gulp from "gulp";
 import rev from "gulp-rev";
 
 gulp.task('hash', () =>
-  gulp.src(['dist/css/*.css', 'dist/js/general.min.js', 'dist/js/libs.min.js'], {base: 'src'})
+  gulp.src(['dist/css/*.css', 'dist/js/*.js'], {base: 'src'})
     .pipe(gulp.dest('./dist/'))  // copy original assets to build dir
     .pipe(rev())
     .pipe(gulp.dest('./dist/'))  // write rev'd assets to build dir

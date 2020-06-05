@@ -13,7 +13,7 @@ exports.deploy = deploy;
 const requireDir = require("require-dir"),
   paths = {
     html: {
-      src: "src/view/**/*.html",
+      src: "src/pages/**/*.html",
       dest: "./dist/",
       watch: "src/**/*.html"
     },
@@ -35,14 +35,14 @@ const requireDir = require("require-dir"),
       watch: "src/img/**/*"
     },
     sass: {
-      src: "src/scss/main.scss",
+      src: ["src/scss/main.scss", "src/pages/**/*.scss"],
       dest: "dist/css/",
-      watch: ['src/scss/**/*.scss','src/blocks/**/*.scss']
+      watch: ["src/scss/**/*.scss","src/blocks/**/*.scss", "src/pages/**/*.scss"]
     },
     scripts: {
-      src: "src/js/general.js",
+      src: ["src/js/**/*.js","src/pages/**/*.js"],
       dest: "./dist/js/",
-      watch: ['src/js/**/*.js','src/blocks/**/*.js']
+      watch: ["src/js/**/*.js", "src/blocks/**/*.js", "src/pages/**/*.js"]
     },
     scriptsLib: {
       src: libs,

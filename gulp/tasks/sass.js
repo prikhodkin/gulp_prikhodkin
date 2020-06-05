@@ -27,6 +27,7 @@ gulp.task('sass', ()=> {
     .pipe(replace('../../','../'))
 
     .pipe(cleanCss())
+    .pipe(rename({dirname: ''}))
     .pipe(rename({suffix: ".min"}))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest('dist/css/'))
@@ -46,6 +47,7 @@ gulp.task('sass:min', () => {
     }))
     .pipe(csso())
     .pipe(cleanCss())
+    .pipe(rename({dirname: ''}))
     .pipe(rename({suffix: ".min"}))
     .pipe(gulp.dest('dist/css/'))
 })
