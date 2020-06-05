@@ -4,3 +4,4 @@ env:
   commonjs: true
 
 extends: 'htmlacademy/es6'
+

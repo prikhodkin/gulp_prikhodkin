@@ -1,1 +1,2 @@
-console.log('test');
+console.log('general.js');
+
