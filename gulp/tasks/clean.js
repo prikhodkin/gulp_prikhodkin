@@ -2,9 +2,11 @@
 
 import { paths } from "../../gulpfile.babel";
 import gulp from "gulp";
-import clean from "gulp-clean";
+import g_clean from "gulp-clean";
+
 
 gulp.task("clean", ()=> {
     return gulp.src(paths.clean.src, {read: false})
-        .pipe(clean())
+        .pipe(g_clean())
 });
+

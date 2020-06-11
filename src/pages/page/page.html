@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+@@loop('../../blocks/menu/menu.html', [
+{"label": "Открыть меню1"},
+{"label": "Открыть меню2"}
+])
+
+<ul class="menu__list">
+  @@loop('../../blocks/menu/menu__item.html', [
+    {"label": "Ссылка № 1"},
+    {"label": "Ссылка № 2"},
+    {"label": "Ссылка № 3"}
+  ])
+</ul>
+</body>
+</html>

@@ -27,6 +27,15 @@
 <body>
   <main>
     <h1>INDEX.HTML</h1>
+    @@include('../../blocks/menu/menu.html', {
+      "key": "value"
+    })
+
+    @@loop('../../blocks/menu/menu.html', [
+      {"label": "Открыть меню"},
+      {"label": "Открыть меню"}
+    ])
+
   </main>
   <script src="js/libs.min.js"></script>
   <script src="js/general.min.js"></script>

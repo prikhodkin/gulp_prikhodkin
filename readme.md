@@ -145,11 +145,34 @@ img                             | Изображения
 ```  
    
 #### <a name="include"></a> Подключение файлов
-Используется для подключения html/js файлов в нужном месте
+Подключение js файлов 
 ```
-//= "../blocks/dir-name/file-name.html"
+//= "../blocks/dir-name/file-name.js"
 ```
-       
+
+Подключения html файлов 
+```
+@@include('../../blocks/dir-name/file-name.html')
+```
+Подключение html файлов с передачей данных
+```
+@@include('../../blocks/dir-name/file-name.html', {
+  "key": "value"
+})
+```
+```
+@@loop('../../blocks/dir-name/file-name.html', [
+    { "key": "value" },
+    { "key": "value" },
+])
+```
+
+Шаблон подключаемого файла с данными
+```
+<section>
+    <h1>@@key</h1>
+</section>
+```
 
 ### <a name="error"></a> Ошибки
 

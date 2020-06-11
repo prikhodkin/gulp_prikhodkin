@@ -2,16 +2,13 @@
 
 import gulp from "gulp";
 import ghPages from "gh-pages";
+import requireDir from "require-dir";
 import path from "path";
 import libs from "./libs";
 
-function deploy(cb) {
-  ghPages.publish(path.join(process.cwd(), './dist'), cb);
-}
 
-exports.deploy = deploy;
-const requireDir = require("require-dir"),
-  paths = {
+// Пути для тасков
+const paths = {
     html: {
       src: "src/pages/**/*.html",
       dest: "./dist/",
@@ -30,7 +27,7 @@ const requireDir = require("require-dir"),
       watch: "src/fonts/**/*"
     },
     images: {
-      src: ["./src/img/**/*.{jpg,jpeg,png,gif,svg}", "!./src/img/svg/icons/*", "!./src/img/favicons/*.{jpg,jpeg,png,gif,svg}"],
+      src: ["./src/img/**/*.{jpg,jpeg,png,gif,svg,mp4}", "!./src/img/svg/icons/*", "!./src/img/favicons/*.{jpg,jpeg,png,gif,svg}"],
       dest: "./dist/img/",
       watch: "src/img/**/*"
     },
@@ -60,7 +57,6 @@ const requireDir = require("require-dir"),
       dest: "./dist/img/",
       watch: "src/img/**/*"
     }
-
   };
 
 requireDir("./gulp/tasks/");
@@ -78,3 +74,8 @@ gulp.task('build',
     gulp.parallel('sass:min','html','scripts:min','scripts-lib:min','images:min','favicons','fonts', 'webp'),
     gulp.series('hash')
   ));
+
+// Деплой на GH-Pages
+export const deploy = (cb) => {
+  ghPages.publish(path.join(process.cwd(), './dist'), cb);
+}

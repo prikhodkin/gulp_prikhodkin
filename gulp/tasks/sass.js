@@ -45,6 +45,7 @@ gulp.task('sass:min', () => {
     .pipe(autoprefixer({
       cascade: false
     }))
+    .pipe(replace('../../','../'))
     .pipe(csso())
     .pipe(cleanCss())
     .pipe(rename({dirname: ''}))

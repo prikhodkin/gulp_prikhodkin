@@ -1,25 +1,26 @@
 .menu__btn {
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  font-size: 0;
   width: 30px;
   height: 30px;
-  border: none;
   padding: 0;
+  font-size: 0;
+  border: none;
   cursor: pointer;
+  appearance: none;
 }
 
 .menu__hamburger {
-  display: block;
   position: relative;
+  display: block;
   height: 2px;
   background-color: #000000;
   transition: all 0.3s;
-  &::before, &::after {
+
+  &::before,
+  &::after {
     content: "";
-    display: block;
     position: absolute;
     left: 0;
+    display: block;
     width: 100%;
     height: inherit;
     background-color: #000000;
@@ -29,16 +30,19 @@
   &::before {
     top: -8px;
   }
+
   &::after {
     bottom: -8px;
   }
 
   &--active {
     background-color: transparent;
+
     &::before {
       top: 0;
       transform: rotate(45deg);
     }
+
     &::after {
       bottom: 0;
       transform: rotate(-45deg);
