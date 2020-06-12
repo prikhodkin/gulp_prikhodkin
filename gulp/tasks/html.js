@@ -23,4 +23,21 @@ gulp.task('html', ()=> {
   }))
 });
 
+gulp.task('html:min', ()=> {
+  return gulp.src(paths.html.src)
+    .pipe(plumber())
+    .pipe(include({
+      prefix: '@@',
+      basepath: '@file'
+    }))
+    .pipe(rename({dirname: ''}))
+    .pipe(replace('../',''))
+    .pipe(replace('.css','.min.css'))
+    .pipe(replace('.js','.min.js'))
+    .pipe(gulp.dest(paths.html.dest))
+    .pipe(browserSync.reload({
+      stream: true
+    }))
+});
+
 

@@ -6,7 +6,6 @@ import requireDir from "require-dir";
 import path from "path";
 import libs from "./libs";
 
-
 // Пути для тасков
 const paths = {
     html: {
@@ -71,7 +70,7 @@ gulp.task('dev',
 
 gulp.task('build',
   gulp.series('clean','sprite',
-    gulp.parallel('sass:min','html','scripts:min','scripts-lib:min','images:min','favicons','fonts', 'webp'),
+    gulp.parallel('sass:min','html:min','scripts:min','scripts-lib:min','images:min','favicons','fonts', 'webp'),
     gulp.series('hash')
   ));
 

@@ -16,7 +16,6 @@ gulp.task('scripts:lib', ()=> {
   return gulp.src(paths.scriptsLib.src)
     .pipe(plumber())
     .pipe(concat('libs.js'))
-    .pipe(rename({suffix: ".min"}))
     .pipe(gulp.dest(paths.scriptsLib.dest))
     .pipe(browserSync.reload({
       stream: true
@@ -30,7 +29,6 @@ gulp.task('scripts', ()=> {
     .pipe(babel({presets: ["@babel/preset-env"]}))
     .pipe(sourcemaps.write("./maps/"))
     .pipe(rename({dirname: ''}))
-    .pipe(rename({suffix: ".min"}))
     .pipe(gulp.dest('./dist/js/'))
     .pipe(browserSync.reload({
       stream: true

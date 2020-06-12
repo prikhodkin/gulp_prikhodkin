@@ -28,7 +28,7 @@ gulp.task('sass', ()=> {
 
     .pipe(cleanCss())
     .pipe(rename({dirname: ''}))
-    .pipe(rename({suffix: ".min"}))
+    // .pipe(rename({suffix: ".min"}))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest('dist/css/'))
     .pipe(browserSync.reload({
