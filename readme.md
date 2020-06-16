@@ -63,6 +63,7 @@ gulp_prikhodkin                         | Корень проекта
 ├── .stylelintrc                        | Концигурация StyleLint
 ├── .stylelintignore                    | Исключенные файлы из проверки StyleLint
 ├── .gitignore                          | Исключенные файлы из git
+├── lighthouse.config.js                | Конфигурация lighthouse
 └── .editorconfig                       | Конфигурация редактора
 ```
 
@@ -79,7 +80,13 @@ npm run dev
 ```
 npm run build
 ```
+
+#### Тестирование [lighthouse](https://developers.google.com/web/tools/lighthouse)
+Формирует отчет с оценкой страницы и рекомендациями по устранению недостатков.
     
+```
+npm run speed
+```
 
 #### Публикация на [GitHub Pages](https://pages.github.com/)
 
@@ -177,6 +184,8 @@ img                             | Изображения
 ### <a name="error"></a> Ошибки
 
 + При создании БЭМ блока ответ консоли: `-bash: $: command not found`
+
+Если данная ошибка появляется каждый раз, при новой сессии терминала, данную строку необходимо добавить в конфигурационный файл оболочки вашего терминала
 
 ```
 export PATH=./node_modules/.bin:$PATH
