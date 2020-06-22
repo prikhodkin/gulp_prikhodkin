@@ -1,0 +1,16 @@
+image: tetraweb/php
+
+pages:
+  stage: deploy
+  before_script:
+    - npm install
+    - npm run build
+  script:
+    - mkdir .public
+    - cp -rp dist/* .public
+    - mv .public public
+  artifacts:
+    paths:
+      - public
+  only:
+    - pages

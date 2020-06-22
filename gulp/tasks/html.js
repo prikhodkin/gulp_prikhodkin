@@ -7,6 +7,7 @@ import rename from "gulp-rename";
 import plumber from "gulp-plumber";
 import include from "gulp-file-include";
 import browserSync from "browser-sync";
+import remove from "gulp-remove-html-comments";
 
 gulp.task('html', ()=> {
   return gulp.src(paths.html.src)
@@ -34,6 +35,7 @@ gulp.task('html:min', ()=> {
     .pipe(replace('../',''))
     .pipe(replace('.css','.min.css'))
     .pipe(replace('.js','.min.js'))
+    .pipe(remove())
     .pipe(gulp.dest(paths.html.dest))
     .pipe(browserSync.reload({
       stream: true

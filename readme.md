@@ -63,6 +63,7 @@ gulp_prikhodkin                         | Корень проекта
 ├── .stylelintrc                        | Концигурация StyleLint
 ├── .stylelintignore                    | Исключенные файлы из проверки StyleLint
 ├── .gitignore                          | Исключенные файлы из git
+├── .gitlab-ci.yml                      | Конфигурация для GitLab Pages
 ├── lighthouse.config.js                | Конфигурация lighthouse
 └── .editorconfig                       | Конфигурация редактора
 ```
@@ -92,6 +93,13 @@ npm run speed
 
 ```
 npm run deploy
+```
+
+#### Публикация на [GitLab Pages](https://docs.gitlab.com/ee/user/project/pages/)
+Для публикации на GitLab Pages необходимо сделать push в ветку pages. 
+
+```
+git push origin pages
 ```
 
 ### <a name="libs"></a> Библиотеки
