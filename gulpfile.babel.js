@@ -56,6 +56,9 @@ const paths = {
       src: ["./src/img/**/*.{jpg,jpeg,png,gif}", "!./src/img/svg/icons/*", "!./src/img/favicons/*.{jpg,jpeg,png,gif,svg}"],
       dest: "./dist/img/",
       watch: "src/img/**/*"
+    },
+    bitrix: {
+      src: "../www/local/templates/mobile_app/assets/"
     }
   };
 
@@ -74,6 +77,10 @@ gulp.task('build',
     gulp.parallel('sprite','sass:min','html:min','scripts:min','scripts-lib:min','images:min','favicons','fonts', 'webp'),
     'hash'
   ));
+
+gulp.task('bitrix',
+    gulp.series('build', 'bitrix:cc')
+  );
 
 // Деплой на GH-Pages
 export const deploy = (cb) => {

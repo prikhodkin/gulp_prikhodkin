@@ -71,6 +71,7 @@
     "build": "gulp build",
     "deploy": "gulp deploy",
     "fix": "stylelint src/blocks/**/*.scss --fix",
-    "speed": "gulp lighthouse"
+    "speed": "gulp lighthouse",
+    "bitrix": "gulp bitrix"
   }
 }
