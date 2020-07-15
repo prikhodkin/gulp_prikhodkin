@@ -1,6 +1,6 @@
 "use strict"
 
-import { paths } from "../../gulpfile.babel";
+import paths from "../../config";
 import gulp from "gulp";
 import concat from "gulp-concat"
 import sourcemaps  from "gulp-sourcemaps";

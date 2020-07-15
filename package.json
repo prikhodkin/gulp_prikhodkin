@@ -6,7 +6,8 @@
     "node-normalize-scss": "^8.0.1",
     "slick-carousel": "^1.8.1",
     "vh-check": "^2.0.5",
-    "wow.js": "^1.2.2"
+    "wow.js": "^1.2.2",
+    "stimulus": "^1.1.1"
   },
   "devDependencies": {
     "@babel/core": "^7.10.2",
@@ -21,9 +22,6 @@
     "browser-sync": "^2.26.7",
     "browserslist": "^4.12.0",
     "caniuse-lite": "^1.0.30001084",
-    "chrome-launcher": "^0.13.3",
-    "del": "^5.1.0",
-    "fs": "0.0.1-security",
     "gh-pages": "^2.2.0",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.1",
@@ -49,29 +47,20 @@
     "gulp-sass": "^4.1.0",
     "gulp-sourcemaps": "^2.6.5",
     "gulp-svg-sprite": "^1.5.0",
-    "gulp-svg-sprites": "^4.1.2",
     "gulp-uglify": "^3.0.2",
     "gulp-webp": "^4.0.1",
     "imagemin-webp": "^5.1.0",
-    "lighthouse": "^6.0.0",
-    "open": "^7.0.4",
     "require-dir": "^1.2.0",
-    "stimulus": "^1.1.1",
     "stylelint": "^12.0.1",
     "stylelint-config-htmlacademy": "^0.1.4",
-    "stylelint-config-standard": "^20.0.0",
-    "stylelint-order": "^4.1.0",
     "stylelint-order-htmlacademy": "^1.0.1",
-    "stylelint-scss": "^3.17.2",
-    "stylelint-selector-bem-pattern": "^2.1.0",
-    "turbolinks": "^5.2.0"
+    "stylelint-scss": "^3.17.2"
   },
   "scripts": {
     "dev": "gulp dev",
     "build": "gulp build",
     "deploy": "gulp deploy",
     "fix": "stylelint src/blocks/**/*.scss --fix",
-    "speed": "gulp lighthouse",
     "bitrix": "gulp bitrix"
   }
 }

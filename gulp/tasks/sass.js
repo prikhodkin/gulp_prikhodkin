@@ -1,6 +1,6 @@
 "use strict"
 
-import { paths } from "../../gulpfile.babel";
+import paths from "../../config";
 import gulp from "gulp";
 import sourcemaps  from "gulp-sourcemaps";
 import plumber from "gulp-plumber";
@@ -11,7 +11,6 @@ import csso from "gulp-csso";
 import rename from "gulp-rename";
 import replace from "gulp-replace";
 import browserSync from "browser-sync";
-import rev from "gulp-rev";
 
 gulp.task('sass', ()=> {
   return gulp.src(paths.sass.src)
@@ -28,7 +27,6 @@ gulp.task('sass', ()=> {
 
     .pipe(cleanCss())
     .pipe(rename({dirname: ''}))
-    // .pipe(rename({suffix: ".min"}))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest('dist/css/'))
     .pipe(browserSync.reload({

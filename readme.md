@@ -53,6 +53,7 @@ gulp_prikhodkin                         | Корень проекта
 │           ├── index.scss              | Файл стилей страницы, в который импортируются нужные стили из блоков
 │           └── index.js                | Js файл страницы, в который импортируются нужные js файлы из блоков
 ├── gulpfile.babel.js                   | Конфигурация Gulp
+├── config.js                           | Конфигурация проекта
 ├── libs.js                             | Коллекция JS библиотек
 ├── package.json                        | Список зависимостей 
 ├── .babelrc.js                         | Конфикурация babel
@@ -64,7 +65,6 @@ gulp_prikhodkin                         | Корень проекта
 ├── .stylelintignore                    | Исключенные файлы из проверки StyleLint
 ├── .gitignore                          | Исключенные файлы из git
 ├── .gitlab-ci.yml                      | Конфигурация для GitLab Pages
-├── lighthouse.config.js                | Конфигурация lighthouse
 └── .editorconfig                       | Конфигурация редактора
 ```
 
@@ -80,13 +80,6 @@ npm run dev
     
 ```
 npm run build
-```
-
-#### Тестирование [lighthouse](https://developers.google.com/web/tools/lighthouse)
-Формирует отчет с оценкой страницы и рекомендациями по устранению недостатков.
-    
-```
-npm run speed
 ```
 
 #### Публикация на [GitHub Pages](https://pages.github.com/)

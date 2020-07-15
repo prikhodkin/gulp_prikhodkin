@@ -1,6 +1,6 @@
 "use strict"
 
-import { paths } from "../../gulpfile.babel";
+import paths from "../../config";
 import gulp from "gulp";
 import plumber from "gulp-plumber";
 import browserSync from "browser-sync";

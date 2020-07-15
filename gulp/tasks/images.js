@@ -1,6 +1,6 @@
 "use strict"
 
-import { paths } from "../../gulpfile.babel";
+import paths from "../../config";
 import gulp from "gulp";
 import newer from "gulp-newer";
 import plumber from "gulp-plumber";

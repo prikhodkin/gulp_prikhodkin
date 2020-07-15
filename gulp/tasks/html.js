@@ -1,6 +1,6 @@
 "use strict"
 
-import { paths } from "../../gulpfile.babel";
+import paths from "../../config";
 import gulp from "gulp";
 import replace from "gulp-replace";
 import rename from "gulp-rename";

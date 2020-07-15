@@ -2,7 +2,7 @@
 
 import gulp from "gulp";
 import clean from 'gulp-clean'
-import { paths } from "../../gulpfile.babel";
+import paths from "../../config";
 
 gulp.task("bitrix:cc", () => {
   return gulp.src(paths.bitrix.src)
