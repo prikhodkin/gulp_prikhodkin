@@ -58,7 +58,6 @@ gulp_prikhodkin                         | Корень проекта
 ├── package.json                        | Список зависимостей 
 ├── .babelrc.js                         | Конфикурация babel
 ├── .bemrc.js                           | Конфигурация bem create
-├── .eslintrc.json                      | Конфигурация ES-Lint
 ├── .eslintrcignore                     | Исключенные файлы из проверки ES-Lint
 ├── .eslintrc.yml                       | Конфигурация ES-Lint
 ├── .stylelintrc                        | Концигурация StyleLint
