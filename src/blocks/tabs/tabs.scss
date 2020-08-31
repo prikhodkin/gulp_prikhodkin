@@ -1,0 +1,13 @@
+.tabs__content {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+  //transition: opacity 2s;
+
+  &--active {
+    position: relative;
+    z-index: unset;
+    opacity: 1;
+    transition: opacity 1.2s;
+  }
+}

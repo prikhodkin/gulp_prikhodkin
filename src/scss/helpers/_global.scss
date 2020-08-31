@@ -1,0 +1,28 @@
+body {
+  font-weight: 400;
+  font-family: $first-font, sans-serif;
+}
+
+img {
+  width: 100%;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  outline: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: unset;
+}

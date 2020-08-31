@@ -1,4 +1,4 @@
-# Сборка Gulp v.3.0
+# Сборка Gulp v.4.1
 
 ## Содержание
  + [Быстрый старт](#setup)
@@ -17,14 +17,15 @@
 + [Склонировать репозиторий](https://github.com/prikhodkin/gulp_prikhodkin) ```git@github.com:prikhodkin/gulp_prikhodkin.git```
 + Перейти в папку со сборкой
 + Установить npm зависимости ```npm i ```
++ Переименовать `/gulp/config.exaple.js` на `config.js`
 + Запустить проект ```npm run dev```
-
 
 ### <a name="file"></a> Структура проекта
 ```
 gulp_prikhodkin                         | Корень проекта
-├── dist                                | Build проекта
-├── gulp                                | Таски для галпа
+├── gulp                                | Файлы для настроек галпа 
+│   ├── task                            | Таски для галпа
+│   └── config.exaple.js                | Конфигурация проекта (переименовать в config.js)
 ├── src                                 | Исходные файлы
 │   ├── blocks                          | БЭМ блоки
 │   │   ├── block                       | БЭМ Блок
@@ -52,19 +53,15 @@ gulp_prikhodkin                         | Корень проекта
 │           ├── index.html              | Разметка страницы
 │           ├── index.scss              | Файл стилей страницы, в который импортируются нужные стили из блоков
 │           └── index.js                | Js файл страницы, в который импортируются нужные js файлы из блоков
-├── gulpfile.babel.js                   | Конфигурация Gulp
-├── config.js                           | Конфигурация проекта
-├── libs.js                             | Коллекция JS библиотек
-├── package.json                        | Список зависимостей 
-├── .babelrc.js                         | Конфикурация babel
 ├── .bemrc.js                           | Конфигурация bem create
-├── .eslintrcignore                     | Исключенные файлы из проверки ES-Lint
-├── .eslintrc.yml                       | Конфигурация ES-Lint
-├── .stylelintrc                        | Концигурация StyleLint
-├── .stylelintignore                    | Исключенные файлы из проверки StyleLint
+├── .editorconfig                       | Конфигурация редактора
 ├── .gitignore                          | Исключенные файлы из git
 ├── .gitlab-ci.yml                      | Конфигурация для GitLab Pages
-└── .editorconfig                       | Конфигурация редактора
+├── .stylelintrc                        | Концигурация StyleLint
+├── gulpfile.js                         | Конфигурация Gulp
+├── webpack.config.js                   | Конфигурация WebPack
+└── package.json                        | Список зависимостей 
+
 ```
 
 ### <a name="command"></a> Команды запуска
@@ -84,7 +81,7 @@ npm run build
 #### Публикация на [GitHub Pages](https://pages.github.com/)
 
 ```
-npm run deploy
+npm run ghp
 ```
 
 #### Публикация на [GitLab Pages](https://docs.gitlab.com/ee/user/project/pages/)
@@ -94,15 +91,25 @@ npm run deploy
 git push origin pages
 ```
 
-#### Копирование build сборки в директорию битрикса
+#### Копирование build сборки в произвольную директорию 
+Путь для директории редактируется в ```gulp/config.js ```
+```
+npm run deploy
+```
+
+#### Запускает проверку линтеров
 
 ```
-npm run bitrix
+npm run test
 ```
 
+#### Автоматически исправляет ошибки линтера
+
+```
+npm run fix
+```
 ### <a name="libs"></a> Библиотеки
-
-В корне проекта файл libs.js содержит все подключенные библиотеки и хранит в себе накопленную коллекцию библиотек. Неиспользуемые в проекте библиотеки закомментированны. 
+Если в проекте используются сторонние библиотеки, необходимо подключить файл `vendor.js` на страницу
 
 Для добавление новой библиотеки, необходимо установить пакет с помощью команды
 
@@ -110,10 +117,10 @@ npm run bitrix
 npm install pack-name --save
 ```
 
-После установки пакета, необходимо прописать путь до библиотеки в файле libs.js
+После установки пакета, необходимо импортировать в нужном месте
 
 ```
-./node_modules/jquery/dist/jquery.min.js
+import var from "pack-name"
 ```
 
 Библиотека успешно добавлена в проект.
@@ -158,9 +165,9 @@ img                             | Изображения
 ```  
    
 #### <a name="include"></a> Подключение файлов
-Подключение js файлов 
+Подключение js модулей 
 ```
-//= "../blocks/dir-name/file-name.js"
+import var from "%modules%/block-name/file-name.js"
 ```
 
 Подключения html файлов 
