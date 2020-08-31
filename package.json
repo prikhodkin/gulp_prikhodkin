@@ -65,6 +65,7 @@
     "jquery": "^3.5.1",
     "slick-carousel": "^1.8.1",
     "stimulus": "^1.1.1",
+    "turbolinks": "^5.2.0",
     "vh-check": "^2.0.5",
     "wow.js": "^1.2.2"
   },
