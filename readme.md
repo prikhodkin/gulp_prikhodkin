@@ -1,5 +1,8 @@
-# Сборка Gulp v.4.1
-
+# Сборка Gulp
+![GitHub release](https://img.shields.io/badge/release-v.4.1-green)
+[![GitHub issues](https://img.shields.io/github/issues/prikhodkin/gulp_prikhodkin)](https://github.com/prikhodkin/gulp_prikhodkin/issues)
+[![GitHub forks](https://img.shields.io/github/forks/prikhodkin/gulp_prikhodkin)](https://github.com/prikhodkin/gulp_prikhodkin/network)
+[![Twitter](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter.com%2Fbiz_prikhodkin)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2Fprikhodkin%2Fgulp_prikhodkin)
 ## Содержание
  + [Быстрый старт](#setup)
  + [Структура проекта](#file)
