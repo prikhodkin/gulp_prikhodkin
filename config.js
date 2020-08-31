@@ -52,7 +52,7 @@ const paths = {
   },
   bitrix: {
     src: "../www/local/templates/mobile_app/assets/",
-    clean: "./dist/**"
+    dist: "./dist/**/*"
   }
 };
 

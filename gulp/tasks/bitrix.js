@@ -7,6 +7,6 @@ import paths from "../../config";
 gulp.task("bitrix:cc", () => {
   return gulp.src(paths.bitrix.src)
     .pipe(clean({force: true}))
-    .pipe(gulp.src(paths.clean.src))
+    .pipe(gulp.src(paths.bitrix.dist))
     .pipe(gulp.dest(paths.bitrix.src))
 });
