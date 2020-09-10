@@ -9,6 +9,10 @@
   <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
+<div data-controller="test">
+  <input data-target="test.name" type="text">
+  <button data-action="click->test#greet">Greet</button>
+</div>
   <div class="tabs" data-tabs>
     <ul class="tabs__list">
       <li class="tabs__item tabs__item--active" data-tab="1">Tab # 1</li>
