@@ -76,10 +76,5 @@
     "src/js/**/*.js",
     "src/img/**/*.svg",
     "src/blocks/**/*.scss"
-  ],
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm test"
-    }
-  }
+  ]
 }

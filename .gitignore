@@ -12,4 +12,4 @@ yarn.lock
 .vscode/
 /docs
 /dist
-/gulp/config.js
+/gulp/user-config.js

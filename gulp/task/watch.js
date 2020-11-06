@@ -1,5 +1,5 @@
 const gulp = require("gulp");
-const paths = require("../config");
+const fs = require("fs");
 const html = require("./html");
 const fonts = require("./fonts");
 const images = require("./images");
@@ -7,6 +7,17 @@ const style = require("./style");
 const scripts = require("./scripts")
 const sprite = require("./sprite");
 const vendor = require("./vendor");
+let paths;
+
+try {
+  fs.accessSync('gulp/user-config.js');
+  paths = require("../user-config");
+}
+
+catch (err) {
+  fs.accessSync('gulp/config.js');
+  paths = require("../config");
+}
 
 module.exports = function watch() {
   gulp.watch(paths.style.watch,gulp.series(style));

@@ -1,7 +1,19 @@
 const gulp = require("gulp");
-const paths = require("../config");
+const fs = require("fs");
 const plumber = require("gulp-plumber");
 const gfavicon = require("gulp-favicons");
+
+let paths;
+
+try {
+  fs.accessSync('gulp/user-config.js');
+  paths = require("../user-config");
+}
+
+catch (err) {
+  fs.accessSync('gulp/config.js');
+  paths = require("../config");
+}
 
 module.exports = function favicon() {
   return gulp.src(paths.favicon.src)

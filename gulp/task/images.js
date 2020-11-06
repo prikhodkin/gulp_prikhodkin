@@ -1,5 +1,5 @@
 const gulp = require("gulp");
-const paths = require("../config");
+const fs = require("fs");
 const plumber = require("gulp-plumber");
 const newer = require("gulp-newer")
 const imagemin = require("gulp-imagemin");
@@ -10,6 +10,17 @@ const imageminZopfli = require("imagemin-zopfli");
 const imageminMozjpeg = require("imagemin-mozjpeg");
 const yargs = require("yargs");
 const gulpif = require("gulp-if");
+let paths;
+
+try {
+  fs.accessSync('gulp/user-config.js');
+  paths = require("../user-config");
+}
+
+catch (err) {
+  fs.accessSync('gulp/config.js');
+  paths = require("../config");
+}
 
 const argv = yargs.argv;
 const production = !!argv.production;

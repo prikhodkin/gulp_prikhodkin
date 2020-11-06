@@ -20,15 +20,14 @@
 + [Склонировать репозиторий](https://github.com/prikhodkin/gulp_prikhodkin) ```git@github.com:prikhodkin/gulp_prikhodkin.git```
 + Перейти в папку со сборкой
 + Установить npm зависимости ```npm i ```
-+ Переименовать `/gulp/config.exaple.js` на `config.js`
 + Запустить проект ```npm run dev```
-
++ При необходимости изменить конфиг, создать файл user-config.js в директории `gulp`
 ### <a name="file"></a> Структура проекта
 ```
 gulp_prikhodkin                         | Корень проекта
 ├── gulp                                | Файлы для настроек галпа 
 │   ├── task                            | Таски для галпа
-│   └── config.exaple.js                | Конфигурация проекта (переименовать в config.js)
+│   └── user-config.js                | Конфигурация проекта (переименовать в config.js)
 ├── src                                 | Исходные файлы
 │   ├── blocks                          | БЭМ блоки
 │   │   ├── block                       | БЭМ Блок

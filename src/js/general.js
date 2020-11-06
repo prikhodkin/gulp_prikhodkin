@@ -13,5 +13,3 @@ const context = require.context("./controllers", true, /\.js$/);
 application.load(definitionsFromContext(context));
 
 
-const tabs = $(`[data-tabs]`);
-new Tabs(tabs);
