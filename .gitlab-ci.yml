@@ -1,4 +1,4 @@
-image: tetraweb/php
+image: node:12-buster
 
 pages:
   stage: deploy
