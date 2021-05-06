@@ -30,8 +30,7 @@ module.exports = function style() {
     .pipe(gulpif(!production, sourcemaps.init()))
     .pipe(plumber())
     .pipe(sass({
-      includeCss: true,
-      includePaths: require('node-normalize-scss').includePaths
+      includeCss: true
     }))
     .pipe(autoprefixer({
       cascade: false

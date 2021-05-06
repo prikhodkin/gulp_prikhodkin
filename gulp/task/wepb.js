@@ -22,8 +22,8 @@ module.exports = function webp() {
     .pipe(gwebp([
       imageminWebp({
         lossless: true,
-        quality: 90,
-        alphaQuality: 90
+        quality: 80,
+        alphaQuality: 80
       })
     ]))
     .pipe(gulp.dest('./src/img/'))

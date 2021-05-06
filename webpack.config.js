@@ -4,27 +4,13 @@ module.exports = {
   entry: {
     main: "./src/js/general.js",
   },
-  mode: "development",
+
 
   output: {
-    filename: "general.js",
+    filename: "bundle.js",
     chunkFilename: "[name].js",
     publicPath: "/",
   },
-
-  optimization: {
-    splitChunks: {
-      cacheGroups: {
-        vendor: {
-          test: /node_modules/,
-          chunks: "initial",
-          name: "vendor",
-          enforce: true
-        }
-      }
-    }
-  },
-  devtool: 'source-map',
   module: {
     rules: [
       {
@@ -43,7 +29,8 @@ module.exports = {
                   "legacy": true
                 }
               ],
-              "@babel/plugin-proposal-class-properties"
+              "@babel/plugin-proposal-class-properties",
+              "@babel/plugin-transform-runtime"
             ]
           }
         }

@@ -24,10 +24,18 @@ catch (err) {
 const argv = yargs.argv;
 const production = !!argv.production;
 
+const webpackDevelopment = () => {
+  return webpackStream({...webpackConfig,   mode: "development", devtool: "source-map"}, webpack)
+}
+
+const webpackProduction = () => {
+  return webpackStream({...webpackConfig,   mode: "production"}, webpack)
+}
+
 module.exports = function scripts() {
   return gulp.src(paths.scripts.src)
     .pipe(plumber())
-    .pipe(webpackStream(webpackConfig), webpack)
+    .pipe(gulpif(!production, webpackDevelopment(), webpackProduction() ))
     .pipe(rename({dirname: ''}))
     .pipe(gulpif(production, uglify()))
     .pipe(gulpif(production, rename({suffix: ".min"})))

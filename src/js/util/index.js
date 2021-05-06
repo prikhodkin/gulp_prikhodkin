@@ -1,1 +1,1 @@
-export * from "./query";
+// Silence is gold

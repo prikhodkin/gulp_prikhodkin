@@ -1,8 +1,20 @@
-# Сборка Gulp
-![GitHub release](https://img.shields.io/badge/release-v.4.1-green)
+# Сборка Gulp для верстки
+![GitHub release](https://img.shields.io/badge/release-v.5.0-green)
 [![GitHub issues](https://img.shields.io/github/issues/prikhodkin/gulp_prikhodkin)](https://github.com/prikhodkin/gulp_prikhodkin/issues)
 [![GitHub forks](https://img.shields.io/github/forks/prikhodkin/gulp_prikhodkin)](https://github.com/prikhodkin/gulp_prikhodkin/network)
 [![Twitter](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter.com%2Fbiz_prikhodkin)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2Fprikhodkin%2Fgulp_prikhodkin)
+
+##Возможности сборки
++ Препроцессор SCSS
++ Автоматическая генерация WebP
++ Автоматическая генерация SVG Sprite
++ WebPack для работы с JS modules
++ Минификация билда для продакшн версии
++ Деплой проекта на GitHub Pages и GitLab Pages
++ Автоматическая подмена путей в продакшн версии
++ StyleLint и ES Lint
++ Создание БЭМ блоков командой в консоли
+
 ## Содержание
  + [Быстрый старт](#setup)
  + [Структура проекта](#file)
@@ -56,6 +68,7 @@ gulp_prikhodkin                         | Корень проекта
 │           └── index.js                | Js файл страницы, в который импортируются нужные js файлы из блоков
 ├── .bemrc.js                           | Конфигурация bem create
 ├── .editorconfig                       | Конфигурация редактора
+├── .eslintrc.yml                       | Конфигурация ES Lint
 ├── .gitignore                          | Исключенные файлы из git
 ├── .gitlab-ci.yml                      | Конфигурация для GitLab Pages
 ├── .stylelintrc                        | Концигурация StyleLint
